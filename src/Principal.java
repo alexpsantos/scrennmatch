@@ -5,12 +5,17 @@ import br.com.alex.screenmatch.modelos.Episodio;
 import br.com.alex.screenmatch.modelos.Filme;
 import br.com.alex.screenmatch.modelos.Serie;
 
+
+import java.util.ArrayList;
+
+import static br.com.alex.screenmatch.modelos.Filme.somar;
+
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
+        Filme meuFilme = new Filme("O poderoso chefão", 1970);
 
-        meuFilme.setNome("O poderoso chefão");
-        meuFilme.setAnoDeLancamento(1970);
+        //meuFilme.setNome("O poderoso chefão");
+        //meuFilme.setAnoDeLancamento(1970);
         meuFilme.setDuracaoEmMinutos(180);
 
         meuFilme.avalia(10);
@@ -22,9 +27,9 @@ public class Principal {
         System.out.println("Total de avalicções: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost", 2000);
+        //lost.setNome("Lost");
+        //lost.setAnoDeLancamento(2000);
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(7);
         lost.setMinutosPorEpisodio(45);
@@ -33,10 +38,10 @@ public class Principal {
 
 
 
-        Filme meuOutroFilme = new Filme();
+        Filme meuOutroFilme = new Filme("Avatar", 2023);
 
-        meuOutroFilme.setNome("Avatar");
-        meuOutroFilme.setAnoDeLancamento(2023);
+        //meuOutroFilme.setNome("Avatar");
+        //meuOutroFilme.setAnoDeLancamento(2023);
         meuOutroFilme.setDuracaoEmMinutos(200);
 
         CalculadoraDeTempo calculadoraDeTempo = new CalculadoraDeTempo();
@@ -53,5 +58,25 @@ public class Principal {
         episodio.setSerie(lost);
         episodio.setTotalDeVisualizacoes(300);
         filtro.filtra(episodio);
+
+        var filmeDoAlex = new Filme("DogVille", 2003);
+        filmeDoAlex.setDuracaoEmMinutos(200);
+        //filmeDoAlex.setAnoDeLancamento(2003);
+        //filmeDoAlex.setNome("Dogville");
+        filmeDoAlex.avalia(10);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDoAlex);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(meuOutroFilme);
+
+        System.out.println("Tamanhando da lista  é: " + listaDeFilmes.size());
+        System.out.println("Primeiro filme: " + listaDeFilmes.get(0).getNome());
+        System.out.println(listaDeFilmes);
+
+        System.out.println("toString do filme " + listaDeFilmes.get(0).toString());
+
+
+
     }
 }
