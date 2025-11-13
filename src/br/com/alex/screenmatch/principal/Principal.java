@@ -1,5 +1,6 @@
+package br.com.alex.screenmatch.principal;
+
 import br.com.alex.screenmatch.calculos.CalculadoraDeTempo;
-import br.com.alex.screenmatch.calculos.Classificavel;
 import br.com.alex.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alex.screenmatch.modelos.Episodio;
 import br.com.alex.screenmatch.modelos.Filme;
@@ -7,8 +8,6 @@ import br.com.alex.screenmatch.modelos.Serie;
 
 
 import java.util.ArrayList;
-
-import static br.com.alex.screenmatch.modelos.Filme.somar;
 
 public class Principal {
     public static void main(String[] args) {
